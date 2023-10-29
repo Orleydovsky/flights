@@ -22,6 +22,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class FormFieldComponent implements ControlValueAccessor {
   @Input({ required: true }) placeholder!: string;
   @Input({ required: true }) label!: string;
+  @Input({ required: true }) maxlength!: number;
   @Input() icon!: string;
 
   public isDisabled = false;

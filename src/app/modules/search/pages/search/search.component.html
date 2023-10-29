@@ -6,12 +6,14 @@
         formControlName="currentStation"
         label="Origin"
         placeholder="Take Flight from..."
-        icon="flight_takeoff"></app-form-field>
+        icon="flight_takeoff"
+        [maxlength]="3"></app-form-field>
       <app-form-field
         formControlName="arrivalStation"
         label="Destination"
         placeholder="Touch Down in..."
-        icon="flight_land"></app-form-field>
+        icon="flight_land"
+        [maxlength]="3"></app-form-field>
     </form>
     <app-button
       class="self-end"
