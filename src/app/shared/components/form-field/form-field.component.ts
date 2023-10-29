@@ -5,11 +5,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NoNumberInputDirective } from '../../directives/no-number-input.directive';
 
 @Component({
   selector: 'app-form-field',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatInputModule, MatFormFieldModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    NoNumberInputDirective,
+  ],
   templateUrl: './form-field.component.html',
   providers: [
     {
@@ -29,11 +36,14 @@ export class FormFieldComponent implements ControlValueAccessor {
   public value!: string;
 
   public writeValue(value: string): void {
-    this.value = value;
+    this.value = value.toUpperCase();
   }
 
   public registerOnChange(fn: (value: string) => void): void {
-    this.onChange = fn;
+    this.onChange = (newVal: string) => {
+      this.value = newVal.toUpperCase();
+      fn(this.value);
+    };
   }
 
   public registerOnTouched(fn: () => void): void {
