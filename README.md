@@ -1,6 +1,6 @@
 # IdeApps
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version **16.1.5.** and Node version **18.16.1.**
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version **16.1.5.** and Node **18.16.1.**
 
 ## Development server
 
@@ -12,16 +12,35 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Folder structure
 
-The defined folder structure for an Angular project promotes organization, reusability, and scalability. The app folder acts as a core that contains services and models that are shared across the entire application, allowing for a centralized location for commonly used code. The shared/ folder contains standalone components, directives, and pipes that can be used across multiple modules in the application, improving code reusability. The modules/ folder contains modules that encapsulate specific features of the application, along with their respective components, screens and services. Finally, the app.module.ts and app-routing.module.ts files are located in the root of the app/ folder, reflecting Angular's recommended architecture for
+The defined folder structure for an Angular project promotes organization, reusability, and scalability. The app folder acts as a core that contains services and models that are shared across the entire application, allowing for a centralized location for commonly used code. The shared/ folder contains standalone components, directives, and pipes that can be used across multiple modules in the application, improving code reusability. The modules/ folder contains modules that encapsulate specific features of the application, along with their respective components, pages and services. Finally, the app.module.ts and app-routing.module.ts files are located in the root of the app/ folder, reflecting Angular's recommended architecture for
 app-level modules and routing configuration.
 
 ```javascript
-src / app / services / models / shared / components / directives / pipes / modules / module1 / components / services / module1.module.ts;
-module1 - routing.module.ts;
-module2 / components / services / module2.module.ts;
-module2 - routing.module.ts;
-app.module.ts;
-app - routing.module.ts;
+src/
+  app/
+    shared/
+      services/
+      components/
+      directives/
+      pipes/
+      models/
+    modules/
+      module1/
+        components/
+        services/
+        models/
+        pages/
+        module1.module.ts
+        module1-routing.module.ts
+      module2/
+        components/
+        services/
+        models/
+        pages/
+        module2.module.ts
+        module2-routing.module.ts
+    app.module.ts
+    app-routing.module.ts
 ```
 
 ## Components order
