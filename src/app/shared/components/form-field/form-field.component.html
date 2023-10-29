@@ -1,5 +1,12 @@
 <mat-form-field>
   <mat-label>{{ label }}</mat-label>
-  <input matInput [placeholder]="placeholder" />
+  <input
+    [disabled]="isDisabled"
+    [placeholder]="placeholder"
+    [value]="value"
+    (blur)="onTouched()"
+    (input)="onChange(input.value)"
+    matInput
+    #input />
   <mat-icon matSuffix class="text-indigo">{{ icon }}</mat-icon>
 </mat-form-field>
