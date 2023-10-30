@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { CurrencyConversionPipe } from 'src/app/shared/pipes/currency-conversion.pipe';
 
 @NgModule({
   declarations: [SearchComponent, SearchResultsCardComponent],
@@ -25,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatDividerModule,
     MatListModule,
     MatIconModule,
+    CurrencyConversionPipe,
   ],
 })
 export class SearchModule {}
