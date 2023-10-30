@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { Color } from '../../models/shared.model';
 
 @Component({
   selector: 'app-button',
@@ -10,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ButtonComponent {
   @Input({ required: true }) text!: string;
+  @Input() color: Color = '';
   @Output() action = new EventEmitter<void>();
 
   public emitAction() {
