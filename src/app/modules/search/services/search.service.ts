@@ -24,7 +24,6 @@ export class SearchService {
     departureStation: string,
     arrivalStation: string
   ): Flight[] | null {
-    debugger;
     const visitedStations = new Set<string>();
 
     function dfs(
