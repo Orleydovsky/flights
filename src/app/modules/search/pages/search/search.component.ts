@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Flight, Journey, JourneyStep } from '../../models/search.model';
 import { SearchService } from '../../services/search.service';
+import { AlertsService } from 'src/app/shared/services/alerts.service';
 
 @Component({
   selector: 'app-search',
@@ -23,7 +24,11 @@ export class SearchComponent implements OnInit {
     ],
   });
 
-  constructor(private fb: FormBuilder, private searchService: SearchService) {}
+  constructor(
+    private fb: FormBuilder,
+    private searchService: SearchService,
+    private alertsService: AlertsService
+  ) {}
 
   ngOnInit(): void {
     this.getFlights();
@@ -32,17 +37,24 @@ export class SearchComponent implements OnInit {
   public getFlights() {
     this.searchService.getFlights().subscribe({
       next: flights => (this.flights = flights),
-      error: error => {
-        console.log(
-          '🚀 ~ file: search.component.ts:35 ~ SearchComponent ~ this.searchService.getFlights ~ error:',
-          error
-        );
+      error: () => {
+        this.alertsService.genericError();
       },
     });
   }
 
   public getJourney() {
+    if (this.searchFlightForm.invalid) {
+      this.alertsService.noOriginOrDestination();
+      return;
+    }
+
     const { departureStation, arrivalStation } = this.searchFlightForm.value;
+
+    if (departureStation === arrivalStation) {
+      this.alertsService.sameOriginAndDestination();
+      return;
+    }
 
     const flightPath = this.searchService.getFlightPath(
       this.flights,
