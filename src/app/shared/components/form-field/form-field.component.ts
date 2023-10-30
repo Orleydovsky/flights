@@ -36,7 +36,7 @@ export class FormFieldComponent implements ControlValueAccessor {
   public value!: string;
 
   public writeValue(value: string): void {
-    this.value = value.toUpperCase();
+    this.value = value?.toUpperCase() || '';
   }
 
   public registerOnChange(fn: (value: string) => void): void {

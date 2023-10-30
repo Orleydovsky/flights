@@ -63,4 +63,8 @@ export class SearchComponent implements OnInit {
       };
     }
   }
+
+  public resetSearchFlightForm() {
+    this.searchFlightForm.reset();
+  }
 }
