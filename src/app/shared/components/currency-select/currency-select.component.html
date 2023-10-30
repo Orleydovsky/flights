@@ -1,6 +1,8 @@
 <mat-form-field>
   <mat-label>Currency</mat-label>
-  <mat-select>
+  <mat-select
+    [(ngModel)]="selectedCurrency"
+    (selectionChange)="updateCurrency()">
     <mat-option *ngFor="let currency of currencies" [value]="currency">
       {{ currency }}
     </mat-option>
