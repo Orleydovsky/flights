@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Flight, Journey, JourneyStep } from '../../models/search.model';
+import { Flight, Journey } from '../../models/search.model';
 import { SearchService } from '../../services/search.service';
 import { AlertsService } from 'src/app/shared/services/alerts.service';
 
