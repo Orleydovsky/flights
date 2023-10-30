@@ -9,7 +9,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LogoComponent } from './shared/components/logo/logo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CurrencyConversionPipe } from './shared/pipes/currency-conversion.pipe';
 
 @NgModule({
   declarations: [AppComponent],
