@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LogoComponent } from './shared/components/logo/logo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CurrencySelectComponent } from './shared/components/currency-select/currency-select.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +19,9 @@ import { LogoComponent } from './shared/components/logo/logo.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     LogoComponent,
+    HttpClientModule,
+    MatSnackBarModule,
+    CurrencySelectComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

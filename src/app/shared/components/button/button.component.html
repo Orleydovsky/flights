@@ -1,1 +1,3 @@
-<button mat-raised-button>{{ text }}</button>
+<button (click)="emitAction()" mat-raised-button [color]="color">
+  {{ text }}
+</button>

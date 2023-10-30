@@ -1,5 +1,17 @@
 <mat-form-field>
   <mat-label>{{ label }}</mat-label>
-  <input matInput [placeholder]="placeholder" />
+  <input
+    [disabled]="isDisabled"
+    [placeholder]="placeholder"
+    [value]="value"
+    (blur)="onTouched()"
+    (input)="onChange(input.value)"
+    [maxLength]="maxlength"
+    appNoNumberInput
+    matInput
+    #input />
   <mat-icon matSuffix class="text-indigo">{{ icon }}</mat-icon>
+  <mat-hint align="end" class="text-white" *ngIf="input.value"
+    >{{ input.value.length }}/{{ maxlength }}</mat-hint
+  >
 </mat-form-field>
