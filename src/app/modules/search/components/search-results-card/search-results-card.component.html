@@ -21,7 +21,9 @@
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions class="self-end flex gap-2">
-    <app-button text="Not what I need" color="accent"></app-button>
-    <app-button text="I'll take it!" color="primary"></app-button>
+    <app-button
+      text="I'll take it!"
+      color="primary"
+      (action)="bookFlight()"></app-button>
   </mat-card-actions>
 </mat-card>

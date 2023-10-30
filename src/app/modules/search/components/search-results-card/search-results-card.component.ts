@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { JourneyStep } from '../../models/search.model';
 import { CurrencyService } from 'src/app/shared/services/currency.service';
+import { AlertsService } from 'src/app/shared/services/alerts.service';
 
 @Component({
   selector: 'app-search-results-card',
@@ -14,11 +15,18 @@ export class SearchResultsCardComponent implements OnInit {
 
   public selectedCurrency!: string;
 
-  constructor(private currencyService: CurrencyService) {}
+  constructor(
+    private currencyService: CurrencyService,
+    private alertsService: AlertsService
+  ) {}
 
   ngOnInit(): void {
     this.currencyService.currency$.subscribe(currency => {
       this.selectedCurrency = currency;
     });
+  }
+
+  public bookFlight() {
+    this.alertsService.bookFlight();
   }
 }

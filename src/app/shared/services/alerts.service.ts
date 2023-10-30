@@ -34,4 +34,11 @@ export class AlertsService {
       'Got it'
     );
   }
+
+  public bookFlight() {
+    this.openSnackBar(
+      'You have successfully booked this flight',
+      'Email me this'
+    );
+  }
 }
