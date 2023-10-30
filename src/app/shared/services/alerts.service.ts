@@ -27,4 +27,11 @@ export class AlertsService {
   public genericError() {
     this.openSnackBar('There was an error! Please try later', 'Got it');
   }
+
+  public noFlights() {
+    this.openSnackBar(
+      'There are no available flights for the selected route',
+      'Got it'
+    );
+  }
 }

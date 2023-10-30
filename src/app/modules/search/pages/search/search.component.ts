@@ -73,6 +73,8 @@ export class SearchComponent implements OnInit {
         price: totalPrice,
         flights: JourneySteps,
       };
+    } else {
+      this.alertsService.noFlights();
     }
   }
 
