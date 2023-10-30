@@ -1,14 +1,18 @@
 <mat-card class="h-full flex flex-col">
   <mat-card-header>
     <mat-card-subtitle>{{ origin }} to {{ destination }}</mat-card-subtitle>
-    <mat-card-title class="flex justify-between"> {{ price }}</mat-card-title>
+    <mat-card-title class="flex justify-between">
+      {{ price }} USD</mat-card-title
+    >
   </mat-card-header>
   <mat-card-content class="h-full" *ngIf="flights.length > 1">
     <mat-list>
       <div mat-subheader>This flight has multiple scales:</div>
       <mat-list-item *ngFor="let scale of flights">
         <mat-icon matListItemIcon>flight</mat-icon>
-        <div matListItemTitle>{{ scale.price }}</div>
+        <div matListItemTitle>
+          {{ scale.origin }} to {{ scale.destination }}
+        </div>
         <div matListItemLine>{{ scale.price }} USD</div>
       </mat-list-item>
     </mat-list>
